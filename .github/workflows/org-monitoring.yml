@@ -45,6 +45,11 @@ jobs:
       max-parallel: 10 # Set to 1 if you have issues with command npm install --no-cache @salesforce/cli --global
       matrix:
         # MANUAL: Add your monitored git branches here
+              env:
+        # MANUAL: Update variables below !
+        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
         branch:
           - monitoring_myclient
           - monitoring_myclient__integ_sandbox
@@ -140,6 +145,11 @@ jobs:
       max-parallel: 10 # Set to 1 if you have issues with command npm install --no-cache @salesforce/cli --global
       matrix:
         # MANUAL: Add your monitored git branches here
+              env:
+        # MANUAL: Update variables below !
+        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
         branch:
           - monitoring_myclient
           - monitoring_myclient__integ_sandbox
