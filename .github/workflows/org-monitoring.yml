@@ -46,10 +46,7 @@ jobs:
       matrix:
         # MANUAL: Add your monitored git branches here
               env:
-        # MANUAL: Update variables below !
-        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
-        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
-        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
+        
         branch:
           - monitoring_myclient
           - monitoring_myclient__integ_sandbox
@@ -78,16 +75,11 @@ jobs:
           sf version --verbose --json
       # Login & check deploy with test classes & code coverage
       - name: Login & Retrieve Metadata
-        env:
-          # MANUAL: Update variables below to add authentication variables you need
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
-          SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
-          SFDX_TEST_WAIT_MINUTES: 120 # Override if necessary
+              env:
+        # MANUAL: Update variables below !
+        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
           CI_COMMIT_REF_NAME: ${{ matrix.branch }}
           ORG_ALIAS: ${{ matrix.branch }}
           CONFIG_BRANCH: ${{ matrix.branch }}
@@ -146,10 +138,7 @@ jobs:
       matrix:
         # MANUAL: Add your monitored git branches here
               env:
-        # MANUAL: Update variables below !
-        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
-        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
-        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
+        
         branch:
           - monitoring_myclient
           - monitoring_myclient__integ_sandbox
@@ -180,14 +169,12 @@ jobs:
       - name: Login & Run apex tests
         env:
           # MANUAL: Update variables below to add authentication variables you need
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
-          SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
-          SFDX_TEST_WAIT_MINUTES: 120 # Override if necessary
+          
+        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
+          
+          
           CI_COMMIT_REF_NAME: ${{ matrix.branch }}
           ORG_ALIAS: ${{ matrix.branch }}
           CONFIG_BRANCH: ${{ matrix.branch }}
@@ -321,14 +308,10 @@ jobs:
       - name: Login & Run monitoring checks
         env:
           # MANUAL: Update variables below to add authentication variables you need
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT}}
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__RECETTE_SANDBOX}}
-          SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
-          SFDX_CLIENT_KEY_MONITORING_MYCLIENT__PREPROD_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MYCLIENT__PREPROD_SANDBOX}}
-          SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
-          SFDX_TEST_WAIT_MINUTES: 120 # Override if necessary
+           
+        SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_ID_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX: ${{ secrets.SFDX_CLIENT_KEY_MONITORING_MY_CLIENT__INTEG_SANDBOX}}
+        SFDX_DEPLOY_WAIT_MINUTES: 120 # Override if necessary
           CI_COMMIT_REF_NAME: ${{ matrix.branch }}
           ORG_ALIAS: ${{ matrix.branch }}
           CONFIG_BRANCH: ${{ matrix.branch }}
